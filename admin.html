@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم | جمعية أثر للديمقراطية والحوكمة</title>
+  <meta name="description" content="لوحة تحكم الجمعية.">
+  <meta name="theme-color" content="#0d0f0e">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app">
+  <a class="skip" href="#main">انتقل إلى المحتوى</a>
+
+  <header class="app-header">
+    <div class="brand">
+      <img src="logo.png" alt="" class="logo" width="48" height="44">
+      <span>جمعية أثر للديمقراطية والحوكمة</span>
+    </div>
+    <div class="app-user">
+      <span>اسم المستخدم</span>
+      <a href="login.html" class="btn small">تسجيل الخروج</a>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <nav class="app-nav" aria-label="قائمة اللوحة">
+      <a href="account.html">حسابي</a>
+      <a href="dashboard.html">لوحة المعلومات</a>
+      <a href="admin.html" class="active" aria-current="page">لوحة التحكم</a>
+      <a href="index.html">العودة إلى الموقع</a>
+    </nav>
+    <main class="app-main" id="main">
+      <h1 class="app-title">لوحة التحكم</h1>
+      <p class="hint">تظهر لكل مستخدم الأقسام التي تسمح بها صلاحياته فقط، والمتحكم يرى كل الأقسام.</p>
+      <div class="tabs" role="tablist" aria-label="أقسام الإدارة">
+        <button class="tab active" role="tab" id="tab-content" data-tab="content" aria-selected="true" aria-controls="panel-content" tabindex="0" type="button">المحتوى</button>
+        <button class="tab" role="tab" id="tab-sitetexts" data-tab="sitetexts" aria-selected="false" aria-controls="panel-sitetexts" tabindex="-1" type="button">نصوص الموقع</button>
+        <button class="tab" role="tab" id="tab-requests" data-tab="requests" aria-selected="false" aria-controls="panel-requests" tabindex="-1" type="button">طلبات الانضمام</button>
+        <button class="tab" role="tab" id="tab-members" data-tab="members" aria-selected="false" aria-controls="panel-members" tabindex="-1" type="button">الأعضاء</button>
+        <button class="tab" role="tab" id="tab-roles" data-tab="roles" aria-selected="false" aria-controls="panel-roles" tabindex="-1" type="button">أدوار الأعضاء</button>
+        <button class="tab" role="tab" id="tab-messages" data-tab="messages" aria-selected="false" aria-controls="panel-messages" tabindex="-1" type="button">الرسائل</button>
+        <button class="tab" role="tab" id="tab-permissions" data-tab="permissions" aria-selected="false" aria-controls="panel-permissions" tabindex="-1" type="button">الصلاحيات</button>
+        <button class="tab" role="tab" id="tab-archive" data-tab="archive" aria-selected="false" aria-controls="panel-archive" tabindex="-1" type="button">الأرشيف</button>
+      </div>
+      <section class="panel active" role="tabpanel" id="panel-content" aria-labelledby="tab-content">
+        <div class="panel-head">
+          <h2 class="app-sub">المحتوى</h2>
+          <span class="perm perm-content">تتطلب صلاحية: المحتوى</span>
+          <button class="btn small" type="button">+ إضافة</button>
+        </div>
+        <div class="table-wrap">
+        <table class="data">
+          <caption class="sr-only">المحتوى</caption>
+          <thead><tr><th scope="col">العنوان</th><th scope="col">النوع</th><th scope="col">التاريخ</th><th scope="col">الحالة</th></tr></thead>
+          <tbody><tr class="example-row"><td>مثال</td><td>خبر / نشاط / برنامج / إصدار</td><td>—</td><td>مسودة / منشور</td></tr></tbody>
+        </table>
+      </div><form class="form wide" novalidate>
+        <div class="field">
+          <label for="ctype">النوع</label>
+          <select id="ctype" name="ctype" required><option value="">اختر</option><option>خبر</option><option>نشاط</option><option>برنامج</option><option>إصدار</option></select>
+          <span class="error" id="ctype-error">يرجى اختيار النوع.</span>
+        </div>
+        <div class="field">
+          <label for="ctitle">العنوان</label>
+          <input type="text" id="ctitle" name="ctitle" required>
+          <span class="error" id="ctitle-error">يرجى إدخال العنوان.</span>
+        </div>
+        <div class="field">
+          <label for="cimage">الصورة الرئيسية (اختياري)</label>
+          <input type="file" id="cimage" name="cimage">
+          <span class="error" id="cimage-error"></span>
+        </div>
+          <div class="field">
+            <label for="cbody">النص</label>
+            <div class="toolbar" role="toolbar" aria-label="أدوات تنسيق النص (تُفعَّل مع الباك اند)">
+              <button type="button" disabled aria-label="خط عريض"><b>ع</b></button>
+              <button type="button" disabled aria-label="قائمة">&#8226;&#8226;</button>
+              <button type="button" disabled aria-label="رابط">&#128279;</button>
+              <button type="button" disabled aria-label="صورة داخل النص">صورة</button>
+            </div>
+            <textarea id="cbody" name="cbody" required></textarea>
+            <span class="error" id="cbody-error">يرجى كتابة النص.</span>
+          </div>
+        <div class="field">
+          <label for="cvideo">رابط فيديو (يوتيوب أو فيميو) (اختياري)</label>
+          <input type="url" id="cvideo" name="cvideo">
+          <span class="error" id="cvideo-error">الرابط غير صحيح.</span>
+        </div>
+        <div class="field">
+          <label for="cgallery">صور المعرض (اختياري)</label>
+          <input type="file" id="cgallery" name="cgallery">
+          <span class="error" id="cgallery-error"></span>
+        </div>
+          <p class="hint">محرر النص المنسق الكامل (TinyMCE أو Quill) يُركَّب مع الباك اند، وكل نص يُنظَّف قبل الحفظ.</p>
+          <button type="submit" class="btn">حفظ ونشر</button>
+          <p class="success" role="status">سيرتبط الحفظ بالباك اند لاحقاً.</p>
+        </form>
+      </section>
+      <section class="panel" role="tabpanel" id="panel-sitetexts" aria-labelledby="tab-sitetexts">
+        <div class="panel-head">
+          <h2 class="app-sub">نصوص الموقع</h2>
+          <span class="perm perm-content">تتطلب صلاحية: المحتوى</span>
+          
+        </div>
+        <div class="table-wrap">
+        <table class="data">
+          <caption class="sr-only">نصوص الموقع</caption>
+          <thead><tr><th scope="col">النص</th><th scope="col">الصفحة</th><th scope="col">آخر تعديل</th></tr></thead>
+          <tbody><tr class="example-row"><td>مثال: الرؤية</td><td>من نحن</td><td>—</td></tr></tbody>
+        </table>
+      </div>
+      </section>
+      <section class="panel" role="tabpanel" id="panel-requests" aria-labelledby="tab-requests">
+        <div class="panel-head">
+          <h2 class="app-sub">طلبات الانضمام</h2>
+          <span class="perm perm-members">تتطلب صلاحية: العضوية</span>
+          
+        </div>
+        <div class="table-wrap">
+        <table class="data">
+          <caption class="sr-only">طلبات الانضمام</caption>
+          <thead><tr><th scope="col">التاريخ</th><th scope="col">الاسم</th><th scope="col">الدور المطلوب</th><th scope="col">الحالة</th></tr></thead>
+          <tbody><tr class="example-row"><td>مثال</td><td>—</td><td>متطوع / عضو / هيئة</td><td>جديد</td></tr></tbody>
+        </table>
+      </div>
+      </section>
+      <section class="panel" role="tabpanel" id="panel-members" aria-labelledby="tab-members">
+        <div class="panel-head">
+          <h2 class="app-sub">الأعضاء</h2>
+          <span class="perm perm-members">تتطلب صلاحية: العضوية</span>
+          
+        </div>
+        <div class="table-wrap">
+        <table class="data">
+          <caption class="sr-only">الأعضاء (للاطلاع)</caption>
+          <thead><tr><th scope="col">الاسم</th><th scope="col">البريد</th><th scope="col">الهاتف</th><th scope="col">الدور</th><th scope="col">تاريخ الانضمام</th><th scope="col">الحالة</th></tr></thead>
+          <tbody><tr class="example-row"><td>مثال</td><td>—</td><td>—</td><td>متطوع</td><td>—</td><td>فعّال</td></tr></tbody>
+        </table>
+      </div>
+      </section>
+      <section class="panel" role="tabpanel" id="panel-roles" aria-labelledby="tab-roles">
+        <div class="panel-head">
+          <h2 class="app-sub">أدوار الأعضاء</h2>
+          <span class="perm perm-members">تتطلب صلاحية: العضوية</span>
+          <button class="btn small" type="button">+ دور جديد</button>
+        </div>
+        <div class="table-wrap">
+        <table class="data">
+          <caption class="sr-only">أدوار الأعضاء</caption>
+          <thead><tr><th scope="col">الدور</th><th scope="col">عدد الأعضاء</th></tr></thead>
+          <tbody><tr class="example-row"><td>مثال: متطوع</td><td>—</td></tr></tbody>
+        </table>
+      </div>
+      </section>
+      <section class="panel" role="tabpanel" id="panel-messages" aria-labelledby="tab-messages">
+        <div class="panel-head">
+          <h2 class="app-sub">الرسائل</h2>
+          <span class="perm perm-messages">تتطلب صلاحية: الرسائل</span>
+          
+        </div>
+        <div class="table-wrap">
+        <table class="data">
+          <caption class="sr-only">رسائل التواصل</caption>
+          <thead><tr><th scope="col">المرسل</th><th scope="col">الموضوع</th><th scope="col">التاريخ</th><th scope="col">الحالة</th></tr></thead>
+          <tbody><tr class="example-row"><td>مثال</td><td>—</td><td>—</td><td>جديدة / تم الرد</td></tr></tbody>
+        </table>
+      </div>
+      </section>
+      <section class="panel" role="tabpanel" id="panel-permissions" aria-labelledby="tab-permissions">
+        <div class="panel-head">
+          <h2 class="app-sub">الصلاحيات</h2>
+          <span class="perm perm-super">تتطلب صلاحية: المتحكم</span>
+          <button class="btn small" type="button">+ منح صلاحية</button>
+        </div>
+        <div class="table-wrap">
+        <table class="data">
+          <caption class="sr-only">صلاحيات المستخدمين</caption>
+          <thead><tr><th scope="col">المستخدم</th><th scope="col">البريد</th><th scope="col">الصلاحيات</th></tr></thead>
+          <tbody><tr class="example-row"><td>مثال</td><td>—</td><td>المحتوى / العضوية / الرسائل / المتحكم</td></tr></tbody>
+        </table>
+      </div>
+      </section>
+      <section class="panel" role="tabpanel" id="panel-archive" aria-labelledby="tab-archive">
+        <div class="panel-head">
+          <h2 class="app-sub">الأرشيف</h2>
+          <span class="perm perm-super">تتطلب صلاحية: المتحكم</span>
+          
+        </div>
+        <div class="table-wrap">
+        <table class="data">
+          <caption class="sr-only">أرشيف العمليات</caption>
+          <thead><tr><th scope="col">التاريخ</th><th scope="col">المستخدم</th><th scope="col">العملية</th><th scope="col">السجل</th></tr></thead>
+          <tbody><tr class="example-row"><td>مثال</td><td>—</td><td>إضافة / تعديل / حذف</td><td>—</td></tr></tbody>
+        </table>
+      </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

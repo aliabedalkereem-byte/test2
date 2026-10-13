@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة المعلومات | جمعية أثر للديمقراطية والحوكمة</title>
+  <meta name="description" content="لوحة معلومات الجمعية.">
+  <meta name="theme-color" content="#0d0f0e">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app">
+  <a class="skip" href="#main">انتقل إلى المحتوى</a>
+
+  <header class="app-header">
+    <div class="brand">
+      <img src="logo.png" alt="" class="logo" width="48" height="44">
+      <span>جمعية أثر للديمقراطية والحوكمة</span>
+    </div>
+    <div class="app-user">
+      <span>اسم المستخدم</span>
+      <a href="login.html" class="btn small">تسجيل الخروج</a>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <nav class="app-nav" aria-label="قائمة اللوحة">
+      <a href="account.html">حسابي</a>
+      <a href="dashboard.html" class="active" aria-current="page">لوحة المعلومات</a>
+      <a href="admin.html">لوحة التحكم</a>
+      <a href="index.html">العودة إلى الموقع</a>
+    </nav>
+    <main class="app-main" id="main">
+      <h1 class="app-title">ملخص عام</h1>
+      <p class="hint">أرقام رئيسية عن الموقع، تُحدَّث كل بضع دقائق.</p>
+      <div class="stats">
+        <div class="stat"><span class="stat-label">المستخدمون</span><span class="stat-value">—</span></div>
+        <div class="stat"><span class="stat-label">الأعضاء</span><span class="stat-value">—</span></div>
+        <div class="stat"><span class="stat-label">طلبات انضمام جديدة</span><span class="stat-value">—</span></div>
+        <div class="stat"><span class="stat-label">رسائل غير مقروءة</span><span class="stat-value">—</span></div>
+        <div class="stat"><span class="stat-label">المحتوى المنشور</span><span class="stat-value">—</span></div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
